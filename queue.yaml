@@ -1,0 +1,10 @@
+# to halt the queues set the rate to be 0/s
+queue:
+- name: default
+  rate: 1/s
+- name: photosq
+  rate: 30/m
+- name: activityq
+  rate: 30/m
+- name: setupq
+  rate: 1/h 

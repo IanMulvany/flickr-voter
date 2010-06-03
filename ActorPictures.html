@@ -1,0 +1,23 @@
+<html>
+  <body>
+
+    picture upload report for  <h3><a href="http://www.flickr.com/photos/{{ actor_id }}/">{{ actor_id }}</a></h3>
+    
+    <h3>{{ actor_id }}</h3>
+
+    <h5>photos</h5>
+        {% for photo in actor_photos %}
+            <div id="photodetail" >
+            added the photo  <a href="/photo/showactivity/{{ photo.photo_id }}">{{ photo.photo_id }}</a> on {{ photo.created }}
+            </div>
+            
+            <form action="/increment?actor={{ actor_id }}&activityid={{ photo.photo_id }}" method="post">
+    <div><input type="submit" value="vote up"></div>
+</form> 
+            
+        {% endfor %}
+
+{% extends "admincontrols.html" %}
+  </body>
+</html>
+

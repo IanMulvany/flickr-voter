@@ -1,0 +1,21 @@
+<html>
+  <body>
+
+        you want to get new social activity about the picture with the following id:
+        {{ photoid }}
+        
+        <a href="{{ photo.photopage_url }}"><img src="{{ photo.photoimage_url }}"></a> 
+        
+        <p>
+        and I have this to say
+        {{ message }}
+        </p>
+        what I have listed is the following:    
+        {{ activity }}
+
+
+
+        
+{% extends "admincontrols.html" %}
+  </body>
+</html>

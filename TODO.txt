@@ -1,0 +1,53 @@
+
+Mon 31 May 2010 10:38:35 BST
+
+some more ideas:
+- add ajax forms
+- add paging on returned results
+- normalizie function names
+    class getters and setters
+        allways retur class objects
+    data query functiuons
+        allways return lists of class objects from search
+    api calls
+    display handlers
+    support functions
+    xml parsing functions
+
+Fri 28 May 2010 18:42:18 BST
+
+- add emailing on new image add and new social activity
+
+- add table for users who have added something
+    done
+
+- add the ability to vote
+    todo
+
+- link UID to flickr photo page
+    done
+
+- make a page with rankings of people who have received lots of votes
+    waiting
+
+- batch upate images in db looking for comments, should be easy?
+    done
+
+
+-------
+- get admin account access to admin only pages working
+    am having a problem in getting login from ian@mulvany.net (apps for your domain id) working
+    need to test with one admin declared goolge account and one non-admin declared google accountÂ
+- figure out how to do a htp call from within app engine
+- think about the data structure for reporiting on flickr group things?
+- think about sending email from the app to people looking at items being tagged on flickr
+
+- think about using queues, adding the root queue via a transaction
+    (we could also use a cron job, that might be easier to do).
+    - for every image have a transaction that looks for 
+
+- have a transaction that adds images the queue that looks for comments
+
+- don't forget that this group is now tracked here:
+http://dev.nitens.org/flickr/group_trackr.php?group=1348234@N24
+

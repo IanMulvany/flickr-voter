@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <link type="text/css" rel="stylesheet" href="/stylesheets/activities.css" />
+</head>
+  <body>
+
+    you want a list of all activities that we have looked at so far
+    in total there are {{ count }} they are
+    
+        {% for activity in activities %}
+            <div id="activityrecord">
+             <a href="{{ activity.1 }}"><img src="{{ activity.2 }}"></a>
+           at {{ activity.0.created }} {{ activity.0.author }} added a {{ activity.0.activity_type }} to picture {{ activity.0.photo_id }}, and it said {{ activity.0.activity_content }}
+           
+           <div id="votetotals">
+                vote total: {{ activity.0.vote_sum }},
+                votes cast: {{ activity.0.vote_count }} 
+           </div>
+
+            <form action="/increment?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                <div><input type="submit" value="give cookie"></div>
+            </form>   
+            <form action="/decrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                <div><input type="submit" value="take cookie away"></div>
+            </form> 
+           
+            </div>
+        {% endfor %}
+
+
+
+
+
+{% extends "admincontrols.html" %}
+  </body>
+</html>
+

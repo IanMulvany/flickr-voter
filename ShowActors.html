@@ -1,0 +1,27 @@
+<html>
+  <body>
+
+    here are people who have contributed, with the most recent on top.
+
+
+    {% for actor in actors %}
+    
+    <div id="actorinfo" >
+    
+        <a href="http://www.flickr.com/photos/{{ actor.author }}/">{{ actor.author }}</a> last did {{ actor.last_activity_id }} at {{ actor.last_activity_date }}, see their <a href="/actor/report/{{ actor.author }}">full report</a>
+        
+            <div id="votetotals">
+                vote total: {{ actor.vote_sum }},
+                votes cast: {{ actor.vote_count }} 
+           </div>
+        
+    </div>
+    {% endfor %}
+
+
+{% extends "admincontrols.html" %}
+  </body>
+</html>
+
+
+<a href="http://www.flickr.com/photos/{{ actor }}/">{{ actor.author }}</a>

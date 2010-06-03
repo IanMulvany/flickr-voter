@@ -1,0 +1,13 @@
+#activityrecord {
+	width: 11cm;
+	float: none;
+	margin: 10px; background-color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 10px solid #ecfde9;
+    padding: 10px;
+    filter:alpha(opacity=95);
+            -moz-opacity: 0.95;
+            opacity: 0.95;
+
+}

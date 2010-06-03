@@ -1,0 +1,19 @@
+<html>
+  <body>
+
+    you want a list of all pictures that we have looked at so far
+    in total there are {{ count }} they are
+    
+    {% for photo in pictures %}
+    
+         <p> 
+         <a href="{{ photo.photopage_url }}"><img src="{{ photo.photoimage_url }}"></a> 
+         {{ photo.title }} by {{ photo.owner_name }} | <a href="/photo/getactivity/{{ photo.uid }}">get activity for this image</a> | <a href="/photo/showactivity/{{ photo.uid }}">show all activity for this image</a>
+         </p>
+    {% endfor %}
+
+
+{% extends "admincontrols.html" %}
+  </body>
+</html>
+

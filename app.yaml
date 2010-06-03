@@ -1,0 +1,65 @@
+application: mulvanysandbox
+version: 2
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /admin/.*
+  script: admin.py
+  login: admin
+  
+- url: /photo/.*
+  script: main.py
+  login: admin
+
+- url: /actor/.*
+  script: main.py
+  login: admin
+
+- url: /showactors/
+  script: main.py
+  login: admin
+
+- url: /showvoters/
+  script: main.py
+  login: admin
+
+- url: /leaguetable/
+  script: main.py
+  login: admin
+  
+- url: /listphotos/.*
+  script: main.py
+  login: admin
+
+- url: /listactivities/.*
+  script: main.py
+  login: admin
+
+- url: /getphotos/.*
+  script: main.py
+  login: admin
+
+- url: /getupdates/.*
+  script: main.py
+  login: admin
+
+- url: /increment
+  script: main.py
+  login: admin
+
+- url: /decrement
+  script: main.py
+  login: admin
+
+- url: /enginestart
+  script: main.py
+  login: admin
+
+
+- url: .*
+  script: main.py

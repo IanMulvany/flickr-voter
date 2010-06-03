@@ -1,0 +1,19 @@
+<html>
+  <body>
+
+        you want to list all social activity about the picture with the following id:
+        {{ photoid }}
+        
+        <a href="{{ photo.photopage_url }}"><img src="{{ photo.photoimage_url }}"></a> 
+        
+        <ul>
+        {% for activity in activities %}
+           <li>at {{ activity.created }} {{ activity.author }} added a {{ activity.activity_type }} to picture {{ activity.photo_id }}, and it said {{ activity.activity_content }} </li>
+        {% endfor %}
+        </ul>
+
+
+        
+{% extends "admincontrols.html" %}
+  </body>
+</html>

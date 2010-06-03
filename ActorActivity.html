@@ -1,0 +1,33 @@
+<html>
+  <body>
+
+    activity report for  <h3><a href="http://www.flickr.com/photos/{{ actor_id }}/">{{ actor_id }}</a></h3>
+    <h5>notes</h5>
+        {% for note in actor_notes %}
+            <div id="notedetail" >
+            added the note "{{ note.activity_content }}" to image <a href="/photo/showactivity/{{ note.photo_id }}">{{ note.photo_id }}</a> on {{ note.created }}
+            </div>
+        {% endfor %}
+        
+    <h5>comments</h5>
+        {% for comment in actor_comments %}      
+            <div id="commentdetail" >
+            added the comment "{{ comment.activity_content }}" to image <a href="/photo/showactivity/{{ comment.photo_id }}">{{ comment.photo_id }}</a> on {{ comment.created }}
+            </div>
+        {% endfor %}
+        
+    <h5>tags</h5>
+
+        {% for tag in actor_tags %}      
+            <div id="tagdetail" >
+            added the tag  "{{ tag.activity_content }}" to image <a href="/photo/showactivity/{{ tag.photo_id }}">{{ tag.photo_id }}</a> on {{ tag.created }}
+            </div>
+        {% endfor %}
+
+<a href="/actor/report/{{ actor_id }}">their full report</a> or <a href="/actor/pictures/{{ actor_id }}">photos they have added</a> 
+    
+
+{% extends "admincontrols.html" %}
+  </body>
+</html>
+

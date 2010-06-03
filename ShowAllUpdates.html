@@ -1,0 +1,12 @@
+<html>
+  <body>
+        
+        <ul>
+        {% for update in updates %}
+           <li>image {{ update.0 }} has updates {{ update.1 }} </li>
+        {% endfor %}
+        </ul>
+        
+{% extends "admincontrols.html" %}
+  </body>
+</html>

@@ -1,0 +1,4 @@
+cron:
+- description: check for new flickr pictures/activity
+  url: /enginestart
+  schedule: every 45 minutes

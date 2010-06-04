@@ -5,11 +5,11 @@ connect the service to
 # nobel pool is here: http://www.flickr.com/groups/nobellaureatemeeting/pool/
 
 for today:
-- get paging working
-- get ajax voting working
-- add a page that shows items that have not been voted on
-- push a top 5 to the front page
-- use css poitioning to get the contrs working
+- get paging working - done
+- get ajax voting working - done
+- add a page that shows items that have not been voted on - done
+- push a top 5 to the front page -- not sure about this
+- use css poitioning to get the counters working
 - write a howto guide
 - write a set of installation instructions
 - push to git hub

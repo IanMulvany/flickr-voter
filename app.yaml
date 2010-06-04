@@ -40,6 +40,10 @@ handlers:
   script: main.py
   login: admin
 
+- url: /listactunvoted/.*
+  script: main.py
+  login: admin
+
 - url: /getphotos/.*
   script: main.py
   login: admin

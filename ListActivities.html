@@ -12,23 +12,46 @@
     
         {% for activity in activities %}
             <div id="activityrecord">
-             <a href="{{ activity.1 }}"><img src="{{ activity.2 }}"></a>
-           at {{ activity.0.created }} {{ activity.0.author }} added a {{ activity.0.activity_type }} to picture {{ activity.0.photo_id }}, and it said {{ activity.0.activity_content }}
-           
+             <p> 
+                <a href="{{ activity.1 }}"><img src="{{ activity.2 }}"></a> 
+             </p>
+            
+           {{ activity.0.author }} added a {{ activity.0.activity_type }} that said  {{ activity.0.activity_content }}
+         
+
            <div id="votetotals">
-                vote total: {{ activity.0.vote_sum }},
-                votes cast: {{ activity.0.vote_count }} 
+                vote total: <span id="total">{{ activity.0.vote_sum }}</span>,
+                votes cast: <span id="cast">{{ activity.0.vote_count }}</span> 
            </div>
+
+
+           <div id="voting"> 
+
+            <form action="/publicincrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                <div><input type="submit" value="public vote"></div>
+            </form>   
+
 
             <form action="/increment?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
                 <div><input type="submit" value="give cookie"></div>
             </form>   
             <form action="/decrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
                 <div><input type="submit" value="take cookie away"></div>
-            </form> 
+            </form>
+
+           </div>
+           
+            {% if admin %}
+              activity creation time: {{ activity.0.created }}  
+            {% endif %}
            
             </div>
         {% endfor %}
+        
+        
+            {% if next %}
+              <p><a href="?bookmark={{ next }}">Next</a></p>        
+            {% endif %}
 
 
 

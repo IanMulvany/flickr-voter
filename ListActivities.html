@@ -10,6 +10,18 @@
     you want a list of all activities that we have looked at so far
     in total there are {{ count }} they are
     
+
+      <p>
+     {% if previous %}
+      <a href="?newest=true">&lt;&lt;newest</a>              
+      <a href="?previous={{ previous }}">&lt;newer</a>     
+     {% endif %}
+     {% if next %}
+      <a href="?next={{ next }}">older&gt;</a>      
+      <a href="?oldest=true">oldest&gt;&gt;</a>        
+     {% endif %}
+      </p>
+        
         {% for activity in activities %}
             <div id="activityrecord">
              <p> 

@@ -56,6 +56,14 @@ handlers:
   script: main.py
   login: admin
 
+- url: /rpcincrement
+  script: main.py
+  login: admin
+
+- url: /rpcdecrement
+  script: main.py
+  login: admin
+
 - url: /enginestart
   script: main.py
   login: admin

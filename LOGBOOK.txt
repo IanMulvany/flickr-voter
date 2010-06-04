@@ -1,4 +1,21 @@
 
+Fri  4 Jun 2010 10:20:06 BST
+
+connect the service to
+# nobel pool is here: http://www.flickr.com/groups/nobellaureatemeeting/pool/
+
+for today:
+- get paging working
+- get ajax voting working
+- add a page that shows items that have not been voted on
+- push a top 5 to the front page
+- use css poitioning to get the contrs working
+- write a howto guide
+- write a set of installation instructions
+- push to git hub
+
+that's quite a lot, lets see what we can do.
+
 Mon 31 May 2010 10:38:35 BST
 
 some more ideas:

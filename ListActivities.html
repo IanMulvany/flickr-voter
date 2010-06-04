@@ -11,13 +11,16 @@
     in total there are {{ count }} they are
     
 
-    {% if previous %}
-      <p><a href="?previous={{ previous }}">newer</a></p>        
-    {% endif %}
-     {% if next %}
-      <p><a href="?next={{ next }}">older</a></p>        
+      <p>
+     {% if previous %}
+      <a href="?newest=true">&lt;&lt;newest</a>              
+      <a href="?previous={{ previous }}">&lt;newer</a>     
      {% endif %}
-
+     {% if next %}
+      <a href="?next={{ next }}">older&gt;</a>      
+      <a href="?oldest=true">oldest&gt;&gt;</a>        
+     {% endif %}
+      </p>
         
         {% for activity in activities %}
             <div id="activityrecord">

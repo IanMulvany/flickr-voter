@@ -5,10 +5,15 @@
 
 This page provides some advanced options that help you quickly check for new content, but your really shouldn't need to.
 
-<p>
-<a href="/getphotos/">check for any new photos</a>
-</p>
 
+<h3><a href="/getphotos/">Get new photos</a></h3>
+polls flickr for new photos, but remember, we are doing this anyway, so don't do this unless you are paranoid.
+
+<h3><a href="/getupdates/">Get new activity</a></h3>
+polls flickr for activity on the pictures that we already have, but again, we do this automatically a bit more frequently than once an hour, so don't do this.
+
+<h3><a href="/enginestart/">start the engine</a></h3>
+this starts the taskqueue, which is what automatically looks for new photos and activity on those photos, but it's driven by a cron script, so you don't have to do this.
 
 
 {% endblock %}

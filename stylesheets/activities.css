@@ -11,3 +11,41 @@
             opacity: 0.95;
 
 }
+
+#upvote {
+	width: 160px;
+	float: left;
+	position: relative;
+	background-color: #008040;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: sans-serif, "Courier New", Courier, Monaco, monospace;
+	color: black;
+	margin: 4px;
+	border-color: black;
+	border-style: solid;
+}
+
+#downvote {
+	position: relative;
+	width: 160px;
+	float: right;
+	background-color: maroon;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: sans-serif, "Courier New", Courier, Monaco, monospace;
+	color: black;
+	margin: 4px;
+	border-color: black;
+	border-style: solid;
+}
+
+#upvote:hover {
+	background-color: lime;
+}
+
+#downvote:hover {
+	background-color: red;
+}

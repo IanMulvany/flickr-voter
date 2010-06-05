@@ -82,30 +82,28 @@
            </div>
 
            <div id="voting">            
-                <div id="{{ forloop.counter }}{{ activity.0.activity_id }}up">Vote Up</div>
-                <div id="{{ forloop.counter }}{{ activity.0.activity_id }}down">Vote Down</div>
+             <div id='upvote'><div id="{{ forloop.counter }}{{ activity.0.activity_id }}up">Vote Up</div></div>
+             <div id='downvote'><div id="{{ forloop.counter }}{{ activity.0.activity_id }}down">Vote Down</div></div>
                 <div id="{{ forloop.counter }}{{ activity.0.activity_id }}message">Waiting for a vote ...</div>
                 
                 
-        <div id="hideme">
-            <form action="/publicincrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
-                <div><input type="submit" value="public vote"></div>
-            </form>   
-
-            <form action="/increment?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
-                <div><input type="submit" value="give cookie"></div>
-            </form>   
-            <form action="/decrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
-                <div><input type="submit" value="take cookie away"></div>
-            </form>
-        </div>
-
-
-                
-           </div>
+                <div id="hideme">
+                    <form action="/publicincrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                        <div><input type="submit" value="public vote"></div>
+                    </form>   
+        
+                    <form action="/increment?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                        <div><input type="submit" value="give cookie"></div>
+                    </form>   
+                    <form action="/decrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                        <div><input type="submit" value="take cookie away"></div>
+                    </form>
+                </div>
+        </div> <!-- voting div -->
+           
            
             {% if admin %}
-              activity creation time: {{ activity.0.created }}  
+              <div id='creationtime'><p>creation time: {{ activity.0.created }}</p></div>  
             {% endif %}
            
         </div>

@@ -10,6 +10,7 @@ body {
 }
 
 #content {
+	margin-right: 2cm;
 	border-style: none;
 	margin-left: 2cm;
 }

@@ -8,10 +8,10 @@
     
     {% for photo in pictures %}
     
-         <p> 
+       <div id="subblock">
          <a href="{{ photo.photopage_url }}"><img src="{{ photo.photoimage_url }}"></a> 
          {{ photo.title }} by {{ photo.owner_name }} | <a href="/photo/getactivity/{{ photo.uid }}">get activity for this image</a> | <a href="/photo/showactivity/{{ photo.uid }}">show all activity for this image</a>
-         </p>
+       </div>
     {% endfor %}
 
 {% endblock %}

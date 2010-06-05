@@ -8,10 +8,12 @@
         
         <a href="{{ photo.photopage_url }}"><img src="{{ photo.photoimage_url }}"></a> 
         
-        <ul>
+        
         {% for activity in activities %}
-           <li>at {{ activity.created }} {{ activity.author }} added a {{ activity.activity_type }} to picture {{ activity.photo_id }}, and it said {{ activity.activity_content }} </li>
+        <div id="subblock">
+           at {{ activity.created }} {{ activity.author }} added a {{ activity.activity_type }} to picture {{ activity.photo_id }}, and it said {{ activity.activity_content }} 
+        </div>
         {% endfor %}
-        </ul>
+        
 
 {% endblock %}

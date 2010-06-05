@@ -1,5 +1,7 @@
-<html>
-  <body>
+{% extends "base.html" %}
+
+
+{% block content %}
 
         you want to list all social activity about the picture with the following id:
         {{ photoid }}
@@ -12,8 +14,4 @@
         {% endfor %}
         </ul>
 
-
-        
-{% extends "admincontrols.html" %}
-  </body>
-</html>
+{% endblock %}

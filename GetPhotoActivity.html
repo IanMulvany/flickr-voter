@@ -1,5 +1,8 @@
-<html>
-  <body>
+{% extends "base.html" %}
+
+
+{% block content %}
+
 
         you want to get new social activity about the picture with the following id:
         {{ photoid }}
@@ -12,10 +15,4 @@
         </p>
         what I have listed is the following:    
         {{ activity }}
-
-
-
-        
-{% extends "admincontrols.html" %}
-  </body>
-</html>
+{% endblock %}

@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <title>flickr voter</title>
+    {% block extrahead %}{% endblock %}
+  </head>
+  <body>
+    <div id="topnavigtion">
+    
+<a href="/">homepage</a>
+<a href="/admin/">admin page</a>
+<a href="/listphotos/">list photos in the local store</a>
+<a href="/getphotos/">check for any new photos</a>
+<a href="/listactivities/">list all activities</a>
+<a href="/listunvoted/">list unvoted</a>
+<a href="/showactors/">all contributors</a>
+<a href="/leaguetable/">the big bad league table</a>
+    
+      {% block navigation %}
+      {% endblock %}    
+    </div>
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+    <div id="footer">
+      {% block footer %}
+        <h6>brought to you by eagleharp industries</h6>
+      {% endblock %}
+    </div>
+  </body>
+</html>

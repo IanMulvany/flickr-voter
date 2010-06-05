@@ -1,6 +1,7 @@
-<html>
-  <body>
+{% extends "base.html" %}
 
+
+{% block content %}
       {% if nickname %}
         Hey there <b>{{ nickname }}</b>, welcome to the sandbox!
       {% else %}
@@ -17,7 +18,4 @@
         <a href="{{ admin_url }}">{{ admin_linktext }}</a>    
     {% endif %}
 
-
-{% extends "admincontrols.html" %}
-  </body>
-</html>
+{% endblock %}

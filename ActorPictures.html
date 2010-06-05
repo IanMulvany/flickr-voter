@@ -1,5 +1,7 @@
-<html>
-  <body>
+{% extends "base.html" %}
+
+
+{% block content %}
 
     picture upload report for  <h3><a href="http://www.flickr.com/photos/{{ actor_id }}/">{{ actor_id }}</a></h3>
     
@@ -17,7 +19,4 @@
             
         {% endfor %}
 
-{% extends "admincontrols.html" %}
-  </body>
-</html>
-
+{% endblock %}

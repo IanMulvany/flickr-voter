@@ -6,3 +6,8 @@ body {
         padding: 0;
     	background-color: #b3b3b3;
 }
+
+#content {
+	border-style: none;
+	margin-left: 2cm;
+}

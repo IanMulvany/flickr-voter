@@ -1,5 +1,7 @@
-<html>
-  <body>
+{% extends "base.html" %}
+
+
+{% block content %}
 
     you want a list of all pictures that we have looked at so far
     in total there are {{ count }} they are
@@ -12,8 +14,4 @@
          </p>
     {% endfor %}
 
-
-{% extends "admincontrols.html" %}
-  </body>
-</html>
-
+{% endblock %}

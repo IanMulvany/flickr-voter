@@ -1,5 +1,7 @@
-<html>
-  <body>
+{% extends "base.html" %}
+
+
+{% block content %}
 
     here are people who have contributed, with the most recent on top.
 
@@ -17,11 +19,6 @@
         
     </div>
     {% endfor %}
+{% endblock %}
 
 
-{% extends "admincontrols.html" %}
-  </body>
-</html>
-
-
-<a href="http://www.flickr.com/photos/{{ actor }}/">{{ actor.author }}</a>

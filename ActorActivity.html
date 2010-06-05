@@ -1,5 +1,7 @@
-<html>
-  <body>
+{% extends "base.html" %}
+
+
+{% block content %}
 
     activity report for  <h3><a href="http://www.flickr.com/photos/{{ actor_id }}/">{{ actor_id }}</a></h3>
     <h5>notes</h5>
@@ -26,8 +28,4 @@
 
 <a href="/actor/report/{{ actor_id }}">their full report</a> or <a href="/actor/pictures/{{ actor_id }}">photos they have added</a> 
     
-
-{% extends "admincontrols.html" %}
-  </body>
-</html>
-
+{% endblock %}

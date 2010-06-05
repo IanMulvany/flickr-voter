@@ -1,5 +1,7 @@
-<html>
-  <body>
+{% extends "base.html" %}
+
+
+{% block content %}
 
     full report for <h3><a href="http://www.flickr.com/photos/{{ actor_id }}/">{{ actor_id }}</a></h3>
 
@@ -41,9 +43,5 @@
             added the tag  "{{ tag.activity_content }}" to image <a href="/photo/showactivity/{{ tag.photo_id }}">{{ tag.photo_id }}</a> on {{ tag.created }}
             </div>
         {% endfor %} 
-   
-
-{% extends "admincontrols.html" %}
-  </body>
-</html>
+   {% endblock %}
 

@@ -1,9 +1,8 @@
-<html>
-    <head>
-      <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
-    </head>
-  <body>
 
+{% extends "base.html" %}
+
+
+{% block content %}
     here are people who have contributed, with the highest ranked on top.
 
 
@@ -22,7 +21,4 @@
     {% endfor %}
 
 
-{% extends "admincontrols.html" %}
-  </body>
-</html>
-
+{% endblock %}

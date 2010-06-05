@@ -6,15 +6,15 @@
   </head>
   <body>
     <div id="topnavigtion">
+    {% block navigation %}
 <a href="/">home</a>
+<a href="/admin/">admin</a>
 <a href="/listphotos/">photos</a>
 <a href="/listactivities/">activities</a>
 <a href="/listunvoted/">unvoted</a>
 <a href="/showactors/">contributors</a>
 <a href="/leaguetable/">league table</a>
-<a href="/instructions/">about</a>
 <a href="/advanced/">advanced</a>
-      {% block navigation %}
       {% endblock %}    
     </div>
     <div id="content">

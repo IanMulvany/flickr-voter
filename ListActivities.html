@@ -8,6 +8,8 @@
 
 <script type="text/javascript">
     (function($) { $(document).ready(function() {
+    
+        $('#hideme form').hide();
 
  {% for activity in activities %}
         
@@ -83,6 +85,23 @@
                 <div id="{{ forloop.counter }}{{ activity.0.activity_id }}up">Vote Up</div>
                 <div id="{{ forloop.counter }}{{ activity.0.activity_id }}down">Vote Down</div>
                 <div id="{{ forloop.counter }}{{ activity.0.activity_id }}message">Waiting for a vote ...</div>
+                
+                
+        <div id="hideme">
+            <form action="/publicincrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                <div><input type="submit" value="public vote"></div>
+            </form>   
+
+            <form action="/increment?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                <div><input type="submit" value="give cookie"></div>
+            </form>   
+            <form action="/decrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}" method="post">
+                <div><input type="submit" value="take cookie away"></div>
+            </form>
+        </div>
+
+
+                
            </div>
            
             {% if admin %}
@@ -92,6 +111,7 @@
         </div>
     {% endfor %}
         
+
 
 
 {% extends "admincontrols.html" %}

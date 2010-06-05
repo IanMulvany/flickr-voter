@@ -3,10 +3,12 @@
 
 {% block content %}
 
-        <ul>
+
         {% for update in updates %}
-           <li>image {{ update.0 }} has updates {{ update.1 }} </li>
+         <div id="subblock">
+            image {{ update.0 }} has updates {{ update.1 }}
+        </div>
         {% endfor %}
-        </ul>
+        
         
 {% endblock %}    

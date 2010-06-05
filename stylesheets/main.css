@@ -60,4 +60,19 @@ div[id=topnavigtion] a:hover {
 	background-color: #e6e6e6;
 }
 
+#total {
+	border-style: none;
+	font-style: italic;
+	font-family: cursive;
+	font-size: 23px;
+	color: #57170a;
+}
+
+#cast {
+	border-style: none;
+	font-style: italic;
+	font-family: cursive;
+	font-size: 23px;
+	color: #57170a;
+}
 

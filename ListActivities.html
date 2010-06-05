@@ -17,8 +17,8 @@
                     url: '/rpcincrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}', 
                     dataType: 'json', 
                     success: function(json, textStatus) {
-                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals span[id="total"]').text(json.sum);
-                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals span[id="cast"]').text(json.count);
+                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals div[id="total"]').text(json.sum);
+                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals div[id="cast"]').text(json.count);
                         $('#{{ forloop.counter }}{{ activity.0.activity_id }}message').text("thanks for voting up");
                         }, 
                     error: function(xhr, textStatus, errorThrown) {
@@ -33,8 +33,8 @@
                     url: '/rpcdecrement?actor={{ activity.0.author }}&activityid={{ activity.0.activity_id }}', 
                     dataType: 'json', 
                     success: function(json, textStatus) {
-                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals span[id="total"]').text(json.sum);
-                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals span[id="cast"]').text(json.count);
+                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals div[id="total"]').text(json.sum);
+                        $('#{{ forloop.counter }}{{ activity.0.activity_id }}votetotals div[id="cast"]').text(json.count);
                         $('#{{ forloop.counter }}{{ activity.0.activity_id }}message').text("thanks for voting down");
                         }, 
                     error: function(xhr, textStatus, errorThrown) {
@@ -73,8 +73,8 @@
            {{ activity.0.author }} added a {{ activity.0.activity_type }} that said  {{ activity.0.activity_content }}
          
            <div id="{{ forloop.counter }}{{ activity.0.activity_id }}votetotals">
-                vote total: <span id="total">{{ activity.0.vote_sum }}</span>,
-                votes cast: <span id="cast">{{ activity.0.vote_count }}</span> 
+                vote total: <div id="total">{{ activity.0.vote_sum }}</div>,
+                votes cast: <div id="cast">{{ activity.0.vote_count }}</div> 
            </div>
 
            <div id="voting">            

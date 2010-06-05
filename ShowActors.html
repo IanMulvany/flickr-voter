@@ -13,8 +13,8 @@
         <a href="http://www.flickr.com/photos/{{ actor.author }}/">{{ actor.author }}</a> last did {{ actor.last_activity_id }} at {{ actor.last_activity_date }}, see their <a href="/actor/report/{{ actor.author }}">full report</a>
         
             <div id="votetotals">
-                vote total: {{ actor.vote_sum }},
-                votes cast: {{ actor.vote_count }} 
+                total score:  <div id="total">{{ actor.vote_sum }}</div> <br />
+                number of votes: <div id="cast">{{ actor.vote_count }}</div> <br />
            </div>
         
     </div>

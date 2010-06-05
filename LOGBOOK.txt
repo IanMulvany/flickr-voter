@@ -9,12 +9,21 @@ for today:
 - get ajax voting working - done
 - add a page that shows items that have not been voted on - done
 - push a top 5 to the front page -- not sure about this
+-- caught a paging limit bug
+-- proved that the system works on the lindau group, yay!
+
+
+for tomorrow:
+-- the live version needs to have all of it's old data dumped, as some of the photos don't have a vote_count
+    property!!
 - use css poitioning to get the counters working
 - write a howto guide
 - write a set of installation instructions
 - push to git hub
 
 that's quite a lot, lets see what we can do.
+
+    OK, got the two hard things done, and lots of progress on some of the other stuff, not bad.
 
 Mon 31 May 2010 10:38:35 BST
 

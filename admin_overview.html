@@ -3,10 +3,23 @@
 
 {% block content %}
 
-<p>
-    This is the admin screen, and only admins should be able to see this.
-    
-    <a href="/">back</a>
-</p>
-<hr>
+
+<h3><a href="/listphotos/">photos</a></h3>
+This page lists all of the photos that the application is aware of.
+
+<h3><a href="/listactivities/">activities</a></h3>
+Lists all of the activities that the application is aware of. An activity is considered to be one of adding a photo to the pool, or adding a note comment or tag to a photo in the group pool. From this page you can vote on a specific activity. The activity will get a vote, and a vote will also go to the user who created that activity. You can vote up or vote down and the application will keep track of both the individual vote history, and the sum of all the votes for the given activity.
+
+<h3><a href="/listunvoted/">unvoted</a></h3>
+This displays all activities that have had no votes cast for them yet.
+
+<h3><a href="/showactors/">contributors</a></h3>
+This lists all of the flickr users that have made any contributions to the group pool. It is ordered by most recent contributor on top. They are linked to their flickr profile page, and a page that reports on all of the specific activities that they have done, as well as all the votes that have been cast for them.
+
+<h3><a href="/leaguetable/">league table</a></h3>
+This displays the same information as the previous page, but it lists the contributors by their vote order.
+
+<h3><a href="/advanced/">advanced</a></h3>
+This provides access to some advanced features that force the web app to make immediate calls to the flickr api to check for new activity. The application is set to make calls ever 45 minutes.
+
 {% endblock %}

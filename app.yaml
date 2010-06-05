@@ -72,6 +72,13 @@ handlers:
   script: main.py
   login: admin
 
+- url: /advanced/
+  script: main.py
+  login: admin
+
+- url: /instructions/
+  script: main.py
+  login: admin
 
 - url: .*
   script: main.py

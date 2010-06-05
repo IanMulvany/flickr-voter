@@ -1,4 +1,12 @@
 
+Sat  5 Jun 2010 11:19:54 BST
+
+got nice buttons working, yay!
+got nice design working
+designed the votes
+got a better page templating working
+wrote a description of what the app does
+
 Fri  4 Jun 2010 10:20:06 BST
 
 connect the service to

@@ -12,6 +12,11 @@ indexes:
 
 - kind: PhotoActivity
   properties:
+  - name: __key__
+    direction: desc
+
+- kind: PhotoActivity
+  properties:
   - name: activity_type
   - name: author
   - name: created
@@ -21,6 +26,12 @@ indexes:
   properties:
   - name: author
   - name: created
+    direction: desc
+
+- kind: PhotoActivity
+  properties:
+  - name: vote_count
+  - name: __key__
     direction: desc
 
 - kind: Vote

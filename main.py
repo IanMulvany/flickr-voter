@@ -159,7 +159,7 @@ def genGroupPhotoQueryUrl():
 # xml response
 
 def getResponseFromUrl(url):
-    result = urlfetch.fetch(url)        
+    result = urlfetch.fetch(url,headers = {'Cache-Control' : 'max-age=300'})        
     if result.status_code == 200:
         return result.content
     else:
@@ -256,7 +256,7 @@ def genPhotoAddActivitiesFromPhotoUIDs(uids):
         return None
 
 class GetPhotos(webapp.RequestHandler):
-    "retreive a list of photos from a flickr groups, and store new images"
+    "retreive a list of photos from a flickr group, and store new images"
     def get(self):
     
         url = genGroupPhotoQueryUrl()
@@ -272,6 +272,7 @@ class GetPhotos(webapp.RequestHandler):
         if uids == None:
             uids = "no new photos were found"
     
+    
         template_values = {'photoids': uids}
         path = os.path.join(os.path.dirname(__file__), 'GetPhotos.html')
         self.response.out.write(template.render(path, template_values))
@@ -281,7 +282,6 @@ class GetPhotos(webapp.RequestHandler):
 def parsePhotoInfoResponse(response):
     xml = minidom.parseString(response)
     dates_xml = xml.getElementsByTagName('dates')
-    logging.info(dates_xml)
     remote_last_modified = dates_xml[0].getAttribute("lastupdate") # I don't know why I need the [0] here
     return remote_last_modified
 
@@ -379,7 +379,6 @@ def getLocalPhotoActivity(PhotoId):
 class ShowStoredPhotoActivity(webapp.RequestHandler):
     def get(self, PhotoId):
         activities = getLocalPhotoActivity(PhotoId)
-        logging.info(activities)
         photo = getPhoto(PhotoId)
         template_values = {'photo':photo ,'photoid': PhotoId, 'activities': activities}
         path = os.path.join(os.path.dirname(__file__), 'ShowPhotoActivity.html')
@@ -750,36 +749,30 @@ class LeagueTable(webapp.RequestHandler):
 class LoadQueues(webapp.RequestHandler):
     def get(self):
         # Add the task to the default queue.
-        tm = TaskMonitor()
-        tm.put()
-
         photosq = taskqueue.Queue(name='photosq')
         phototask = taskqueue.Task(url='/getphotos/', method='GET')
         photosq.add(phototask)
-        #tm = TaskMonitor()
-        #tm.queue = 'photosq'
-        #tm.put()
+        
+        #monitor = TaskMonitor()
+        #monitor.queue = "placed new photo check"
+        #monitor.put()
 
         query = Photo.all()
         query.order("-last_modified") 
         photos = query.fetch(FETCHLIMIT)
         activityq = taskqueue.Queue(name='activityq') 
-        for photo in photos:
-        
-            #tm = TaskMonitor()
-            #tm.queue = 'activityq'
-            #tm.put()
-        
+        for photo in photos:        
             worker_url = "/photo/getactivity/" + photo.uid
             activitytask = taskqueue.Task(url=worker_url, method='GET')  
             activityq.add(activitytask)          
 
-        #setupq = taskqueue.Queue(name='setupq')
-        #setuptask = taskqueue.Task(url='/enginestart', method='GET', countdown=300)
-        #setupq.add(setuptask)
-
+        #monitor = TaskMonitor()
+        #monitor.queue = "placed photo activites check"
+        #monitor.put()
+        
+        return True
         # ok let's see what happens with the queuing!
-        self.redirect('/')
+        # self.redirect('/')
         
 # simple pages:s
 

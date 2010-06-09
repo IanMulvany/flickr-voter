@@ -36,3 +36,8 @@
 #downvote:hover {
 	background-color: red;
 }
+
+#activitycontent {
+	color: yellow;
+	background-color: teal;
+}

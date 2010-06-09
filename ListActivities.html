@@ -70,7 +70,7 @@
                 <a href="{{ activity.1 }}"><img src="{{ activity.2 }}"></a> 
              </p>
             
-           {{ activity.0.author }} added a {{ activity.0.activity_type }} that said  {{ activity.0.activity_content }}
+           {{ activity.0.author }} added a {{ activity.0.activity_type }} that said  <div id="activitycontent">{{ activity.0.activity_content }}</div>
          
            <div id="{{ forloop.counter }}{{ activity.0.activity_id }}votetotals">
                 vote total: <div id="total">{{ activity.0.vote_sum }}</div>,
